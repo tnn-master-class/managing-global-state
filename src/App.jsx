@@ -1,3 +1,15 @@
-const App = () => <p>app</p>
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { DummyProvider } from './contexts/DummyContext';
+import { Dummy } from 'pages/Dummy';
 
-export default App
+const App = () => (
+  <Router>
+    <Routes>
+      <DummyProvider>
+        <Route path="/dummy" element={<Dummy/>} />
+      </DummyProvider>
+    </Routes>
+  </Router>
+);
+
+export default App;
